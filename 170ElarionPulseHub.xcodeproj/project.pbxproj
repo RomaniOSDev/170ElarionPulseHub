@@ -3,33 +3,147 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 60;
 	objects = {
+
+/* Begin PBXBuildFile section */
+		301222B02FBC2ABE0071B4BB /* spaceship_skins_sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 301222A12FBC2ABE0071B4BB /* spaceship_skins_sheet.png */; };
+		301222B12FBC2ABE0071B4BB /* privacy_policy.md in Resources */ = {isa = PBXBuildFile; fileRef = 301222A32FBC2ABE0071B4BB /* privacy_policy.md */; };
+		301222B22FBC2ABE0071B4BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301222A62FBC2ABE0071B4BB /* Assets.xcassets */; };
+		301222B42FBC2ABE0071B4BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301222AA2FBC2ABE0071B4BB /* LaunchScreen.storyboard */; };
+		301222B52FBC2ABE0071B4BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301222AC2FBC2ABE0071B4BB /* Main.storyboard */; };
+		301222B62FBC2ABE0071B4BB /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222572FBC2ABE0071B4BB /* Color+App.swift */; };
+		301222B72FBC2ABE0071B4BB /* GameProgressStore+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222582FBC2ABE0071B4BB /* GameProgressStore+Home.swift */; };
+		301222B82FBC2ABE0071B4BB /* Notification+Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222592FBC2ABE0071B4BB /* Notification+Progress.swift */; };
+		301222B92FBC2ABE0071B4BB /* AchievementDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012225B2FBC2ABE0071B4BB /* AchievementDefinition.swift */; };
+		301222BA2FBC2ABE0071B4BB /* AchievementDefinition+Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012225C2FBC2ABE0071B4BB /* AchievementDefinition+Progress.swift */; };
+		301222BB2FBC2ABE0071B4BB /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012225D2FBC2ABE0071B4BB /* ActivityItem.swift */; };
+		301222BC2FBC2ABE0071B4BB /* AppExternalLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012225E2FBC2ABE0071B4BB /* AppExternalLink.swift */; };
+		301222BD2FBC2ABE0071B4BB /* DailyMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012225F2FBC2ABE0071B4BB /* DailyMission.swift */; };
+		301222BE2FBC2ABE0071B4BB /* DailyMissionLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222602FBC2ABE0071B4BB /* DailyMissionLaunch.swift */; };
+		301222BF2FBC2ABE0071B4BB /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222612FBC2ABE0071B4BB /* Difficulty.swift */; };
+		301222C02FBC2ABE0071B4BB /* Difficulty+Hints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222622FBC2ABE0071B4BB /* Difficulty+Hints.swift */; };
+		301222C12FBC2ABE0071B4BB /* LevelBestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222632FBC2ABE0071B4BB /* LevelBestRecord.swift */; };
+		301222C22FBC2ABE0071B4BB /* PilotRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222642FBC2ABE0071B4BB /* PilotRank.swift */; };
+		301222C32FBC2ABE0071B4BB /* ShipSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222652FBC2ABE0071B4BB /* ShipSkin.swift */; };
+		301222C42FBC2ABE0071B4BB /* GameEffectsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222672FBC2ABE0071B4BB /* GameEffectsState.swift */; };
+		301222C52FBC2ABE0071B4BB /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222682FBC2ABE0071B4BB /* HapticService.swift */; };
+		301222C62FBC2ABE0071B4BB /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222692FBC2ABE0071B4BB /* SoundService.swift */; };
+		301222C72FBC2ABE0071B4BB /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012226B2FBC2ABE0071B4BB /* AppStorage.swift */; };
+		301222C82FBC2ABE0071B4BB /* AchievementBadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012226D2FBC2ABE0071B4BB /* AchievementBadgeCell.swift */; };
+		301222C92FBC2ABE0071B4BB /* ActivityMissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012226E2FBC2ABE0071B4BB /* ActivityMissionCell.swift */; };
+		301222CA2FBC2ABE0071B4BB /* DailyMissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012226F2FBC2ABE0071B4BB /* DailyMissionCell.swift */; };
+		301222CB2FBC2ABE0071B4BB /* DifficultyChipPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222702FBC2ABE0071B4BB /* DifficultyChipPicker.swift */; };
+		301222CC2FBC2ABE0071B4BB /* LevelGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222712FBC2ABE0071B4BB /* LevelGridCell.swift */; };
+		301222CD2FBC2ABE0071B4BB /* PilotRankProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222722FBC2ABE0071B4BB /* PilotRankProgressCell.swift */; };
+		301222CE2FBC2ABE0071B4BB /* SettingsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222732FBC2ABE0071B4BB /* SettingsCells.swift */; };
+		301222CF2FBC2ABE0071B4BB /* ShipSkinOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222742FBC2ABE0071B4BB /* ShipSkinOptionCell.swift */; };
+		301222D02FBC2ABE0071B4BB /* AppBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222762FBC2ABE0071B4BB /* AppBackgroundView.swift */; };
+		301222D12FBC2ABE0071B4BB /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222772FBC2ABE0071B4BB /* AppButton.swift */; };
+		301222D22FBC2ABE0071B4BB /* AppCellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222782FBC2ABE0071B4BB /* AppCellStyle.swift */; };
+		301222D32FBC2ABE0071B4BB /* AppDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222792FBC2ABE0071B4BB /* AppDesignSystem.swift */; };
+		301222D42FBC2ABE0071B4BB /* GameChromeOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012227A2FBC2ABE0071B4BB /* GameChromeOverlay.swift */; };
+		301222D52FBC2ABE0071B4BB /* GameFinishButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012227B2FBC2ABE0071B4BB /* GameFinishButton.swift */; };
+		301222D62FBC2ABE0071B4BB /* GameHUDOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012227C2FBC2ABE0071B4BB /* GameHUDOverlay.swift */; };
+		301222D72FBC2ABE0071B4BB /* GameResultOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012227D2FBC2ABE0071B4BB /* GameResultOverlay.swift */; };
+		301222D82FBC2ABE0071B4BB /* LaserBoltView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012227E2FBC2ABE0071B4BB /* LaserBoltView.swift */; };
+		301222D92FBC2ABE0071B4BB /* ScreenHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012227F2FBC2ABE0071B4BB /* ScreenHeaderView.swift */; };
+		301222DA2FBC2ABE0071B4BB /* SpaceshipShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222802FBC2ABE0071B4BB /* SpaceshipShape.swift */; };
+		301222DB2FBC2ABE0071B4BB /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222812FBC2ABE0071B4BB /* StarRatingView.swift */; };
+		301222DC2FBC2ABE0071B4BB /* View+TransparentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222822FBC2ABE0071B4BB /* View+TransparentScreen.swift */; };
+		301222DD2FBC2ABE0071B4BB /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222852FBC2ABE0071B4BB /* AchievementsView.swift */; };
+		301222DE2FBC2ABE0071B4BB /* AsteroidEvasionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222872FBC2ABE0071B4BB /* AsteroidEvasionView.swift */; };
+		301222DF2FBC2ABE0071B4BB /* AsteroidEvasionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222882FBC2ABE0071B4BB /* AsteroidEvasionViewModel.swift */; };
+		301222E02FBC2ABE0071B4BB /* MeteorGlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012228A2FBC2ABE0071B4BB /* MeteorGlideView.swift */; };
+		301222E12FBC2ABE0071B4BB /* MeteorGlideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012228B2FBC2ABE0071B4BB /* MeteorGlideViewModel.swift */; };
+		301222E22FBC2ABE0071B4BB /* MeteorTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012228D2FBC2ABE0071B4BB /* MeteorTapView.swift */; };
+		301222E32FBC2ABE0071B4BB /* MeteorTapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012228E2FBC2ABE0071B4BB /* MeteorTapViewModel.swift */; };
+		301222E42FBC2ABE0071B4BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222912FBC2ABE0071B4BB /* HomeView.swift */; };
+		301222E52FBC2ABE0071B4BB /* HomeWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222922FBC2ABE0071B4BB /* HomeWidgets.swift */; };
+		301222E62FBC2ABE0071B4BB /* LevelSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222942FBC2ABE0071B4BB /* LevelSelectionView.swift */; };
+		301222E72FBC2ABE0071B4BB /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222962FBC2ABE0071B4BB /* MainTabView.swift */; };
+		301222E82FBC2ABE0071B4BB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222982FBC2ABE0071B4BB /* OnboardingView.swift */; };
+		301222E92FBC2ABE0071B4BB /* PolicyMarkdownText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012229B2FBC2ABE0071B4BB /* PolicyMarkdownText.swift */; };
+		301222EA2FBC2ABE0071B4BB /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012229C2FBC2ABE0071B4BB /* PrivacyPolicyView.swift */; };
+		301222EB2FBC2ABE0071B4BB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012229D2FBC2ABE0071B4BB /* SettingsView.swift */; };
+		301222EC2FBC2ABE0071B4BB /* ShipSkinPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012229E2FBC2ABE0071B4BB /* ShipSkinPickerView.swift */; };
+		301222ED2FBC2ABE0071B4BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222A52FBC2ABE0071B4BB /* AppDelegate.swift */; };
+		301222EE2FBC2ABE0071B4BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222A72FBC2ABE0071B4BB /* ContentView.swift */; };
+		301222EF2FBC2ABE0071B4BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222AD2FBC2ABE0071B4BB /* SceneDelegate.swift */; };
+		301222F02FBC2ABE0071B4BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222AE2FBC2ABE0071B4BB /* ViewController.swift */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30121F152FBB937D0071B4BB /* 170ElarionPulseHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 170ElarionPulseHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		301222572FBC2ABE0071B4BB /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
+		301222582FBC2ABE0071B4BB /* GameProgressStore+Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameProgressStore+Home.swift"; sourceTree = "<group>"; };
+		301222592FBC2ABE0071B4BB /* Notification+Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Progress.swift"; sourceTree = "<group>"; };
+		3012225B2FBC2ABE0071B4BB /* AchievementDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDefinition.swift; sourceTree = "<group>"; };
+		3012225C2FBC2ABE0071B4BB /* AchievementDefinition+Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AchievementDefinition+Progress.swift"; sourceTree = "<group>"; };
+		3012225D2FBC2ABE0071B4BB /* ActivityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
+		3012225E2FBC2ABE0071B4BB /* AppExternalLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExternalLink.swift; sourceTree = "<group>"; };
+		3012225F2FBC2ABE0071B4BB /* DailyMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMission.swift; sourceTree = "<group>"; };
+		301222602FBC2ABE0071B4BB /* DailyMissionLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionLaunch.swift; sourceTree = "<group>"; };
+		301222612FBC2ABE0071B4BB /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		301222622FBC2ABE0071B4BB /* Difficulty+Hints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Difficulty+Hints.swift"; sourceTree = "<group>"; };
+		301222632FBC2ABE0071B4BB /* LevelBestRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBestRecord.swift; sourceTree = "<group>"; };
+		301222642FBC2ABE0071B4BB /* PilotRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotRank.swift; sourceTree = "<group>"; };
+		301222652FBC2ABE0071B4BB /* ShipSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSkin.swift; sourceTree = "<group>"; };
+		301222672FBC2ABE0071B4BB /* GameEffectsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEffectsState.swift; sourceTree = "<group>"; };
+		301222682FBC2ABE0071B4BB /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		301222692FBC2ABE0071B4BB /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
+		3012226B2FBC2ABE0071B4BB /* AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
+		3012226D2FBC2ABE0071B4BB /* AchievementBadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementBadgeCell.swift; sourceTree = "<group>"; };
+		3012226E2FBC2ABE0071B4BB /* ActivityMissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMissionCell.swift; sourceTree = "<group>"; };
+		3012226F2FBC2ABE0071B4BB /* DailyMissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionCell.swift; sourceTree = "<group>"; };
+		301222702FBC2ABE0071B4BB /* DifficultyChipPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyChipPicker.swift; sourceTree = "<group>"; };
+		301222712FBC2ABE0071B4BB /* LevelGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGridCell.swift; sourceTree = "<group>"; };
+		301222722FBC2ABE0071B4BB /* PilotRankProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotRankProgressCell.swift; sourceTree = "<group>"; };
+		301222732FBC2ABE0071B4BB /* SettingsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCells.swift; sourceTree = "<group>"; };
+		301222742FBC2ABE0071B4BB /* ShipSkinOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSkinOptionCell.swift; sourceTree = "<group>"; };
+		301222762FBC2ABE0071B4BB /* AppBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundView.swift; sourceTree = "<group>"; };
+		301222772FBC2ABE0071B4BB /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		301222782FBC2ABE0071B4BB /* AppCellStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellStyle.swift; sourceTree = "<group>"; };
+		301222792FBC2ABE0071B4BB /* AppDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDesignSystem.swift; sourceTree = "<group>"; };
+		3012227A2FBC2ABE0071B4BB /* GameChromeOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameChromeOverlay.swift; sourceTree = "<group>"; };
+		3012227B2FBC2ABE0071B4BB /* GameFinishButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFinishButton.swift; sourceTree = "<group>"; };
+		3012227C2FBC2ABE0071B4BB /* GameHUDOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHUDOverlay.swift; sourceTree = "<group>"; };
+		3012227D2FBC2ABE0071B4BB /* GameResultOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultOverlay.swift; sourceTree = "<group>"; };
+		3012227E2FBC2ABE0071B4BB /* LaserBoltView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaserBoltView.swift; sourceTree = "<group>"; };
+		3012227F2FBC2ABE0071B4BB /* ScreenHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenHeaderView.swift; sourceTree = "<group>"; };
+		301222802FBC2ABE0071B4BB /* SpaceshipShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipShape.swift; sourceTree = "<group>"; };
+		301222812FBC2ABE0071B4BB /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		301222822FBC2ABE0071B4BB /* View+TransparentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TransparentScreen.swift"; sourceTree = "<group>"; };
+		301222852FBC2ABE0071B4BB /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		301222872FBC2ABE0071B4BB /* AsteroidEvasionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidEvasionView.swift; sourceTree = "<group>"; };
+		301222882FBC2ABE0071B4BB /* AsteroidEvasionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidEvasionViewModel.swift; sourceTree = "<group>"; };
+		3012228A2FBC2ABE0071B4BB /* MeteorGlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorGlideView.swift; sourceTree = "<group>"; };
+		3012228B2FBC2ABE0071B4BB /* MeteorGlideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorGlideViewModel.swift; sourceTree = "<group>"; };
+		3012228D2FBC2ABE0071B4BB /* MeteorTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorTapView.swift; sourceTree = "<group>"; };
+		3012228E2FBC2ABE0071B4BB /* MeteorTapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorTapViewModel.swift; sourceTree = "<group>"; };
+		301222912FBC2ABE0071B4BB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		301222922FBC2ABE0071B4BB /* HomeWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWidgets.swift; sourceTree = "<group>"; };
+		301222942FBC2ABE0071B4BB /* LevelSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionView.swift; sourceTree = "<group>"; };
+		301222962FBC2ABE0071B4BB /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		301222982FBC2ABE0071B4BB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		3012229B2FBC2ABE0071B4BB /* PolicyMarkdownText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyMarkdownText.swift; sourceTree = "<group>"; };
+		3012229C2FBC2ABE0071B4BB /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		3012229D2FBC2ABE0071B4BB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3012229E2FBC2ABE0071B4BB /* ShipSkinPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSkinPickerView.swift; sourceTree = "<group>"; };
+		301222A12FBC2ABE0071B4BB /* spaceship_skins_sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceship_skins_sheet.png; sourceTree = "<group>"; };
+		301222A32FBC2ABE0071B4BB /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
+		301222A52FBC2ABE0071B4BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		301222A62FBC2ABE0071B4BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		301222A72FBC2ABE0071B4BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		301222A82FBC2ABE0071B4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		301222A92FBC2ABE0071B4BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		301222AB2FBC2ABE0071B4BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		301222AD2FBC2ABE0071B4BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		301222AE2FBC2ABE0071B4BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48551B145AC6CAC6E2662082 /* Pods-170ElarionPulseHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-170ElarionPulseHub.debug.xcconfig"; path = "Target Support Files/Pods-170ElarionPulseHub/Pods-170ElarionPulseHub.debug.xcconfig"; sourceTree = "<group>"; };
+		AA447C9C1CD510718322820D /* Pods_170ElarionPulseHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_170ElarionPulseHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14B0018214EF9C6475ED632 /* Pods-170ElarionPulseHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-170ElarionPulseHub.release.xcconfig"; path = "Target Support Files/Pods-170ElarionPulseHub/Pods-170ElarionPulseHub.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		30121F272FBB937E0071B4BB /* Exceptions for "170ElarionPulseHub" folder in "170ElarionPulseHub" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 30121F142FBB937D0071B4BB /* 170ElarionPulseHub */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		30121F172FBB937D0071B4BB /* 170ElarionPulseHub */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				30121F272FBB937E0071B4BB /* Exceptions for "170ElarionPulseHub" folder in "170ElarionPulseHub" target */,
-			);
-			path = 170ElarionPulseHub;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		30121F122FBB937D0071B4BB /* Frameworks */ = {
@@ -45,8 +159,10 @@
 		30121F0C2FBB937D0071B4BB = {
 			isa = PBXGroup;
 			children = (
-				30121F172FBB937D0071B4BB /* 170ElarionPulseHub */,
+				301222AF2FBC2ABE0071B4BB /* 170ElarionPulseHub */,
 				30121F162FBB937D0071B4BB /* Products */,
+				6D3C9D9536AF2B89EDEF9E36 /* Pods */,
+				498B742D542A0CC297D0131B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +174,263 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3012225A2FBC2ABE0071B4BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				301222572FBC2ABE0071B4BB /* Color+App.swift */,
+				301222582FBC2ABE0071B4BB /* GameProgressStore+Home.swift */,
+				301222592FBC2ABE0071B4BB /* Notification+Progress.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		301222662FBC2ABE0071B4BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3012225B2FBC2ABE0071B4BB /* AchievementDefinition.swift */,
+				3012225C2FBC2ABE0071B4BB /* AchievementDefinition+Progress.swift */,
+				3012225D2FBC2ABE0071B4BB /* ActivityItem.swift */,
+				3012225E2FBC2ABE0071B4BB /* AppExternalLink.swift */,
+				3012225F2FBC2ABE0071B4BB /* DailyMission.swift */,
+				301222602FBC2ABE0071B4BB /* DailyMissionLaunch.swift */,
+				301222612FBC2ABE0071B4BB /* Difficulty.swift */,
+				301222622FBC2ABE0071B4BB /* Difficulty+Hints.swift */,
+				301222632FBC2ABE0071B4BB /* LevelBestRecord.swift */,
+				301222642FBC2ABE0071B4BB /* PilotRank.swift */,
+				301222652FBC2ABE0071B4BB /* ShipSkin.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3012226A2FBC2ABE0071B4BB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				301222672FBC2ABE0071B4BB /* GameEffectsState.swift */,
+				301222682FBC2ABE0071B4BB /* HapticService.swift */,
+				301222692FBC2ABE0071B4BB /* SoundService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3012226C2FBC2ABE0071B4BB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3012225A2FBC2ABE0071B4BB /* Extensions */,
+				301222662FBC2ABE0071B4BB /* Models */,
+				3012226A2FBC2ABE0071B4BB /* Services */,
+				3012226B2FBC2ABE0071B4BB /* AppStorage.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		301222752FBC2ABE0071B4BB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3012226D2FBC2ABE0071B4BB /* AchievementBadgeCell.swift */,
+				3012226E2FBC2ABE0071B4BB /* ActivityMissionCell.swift */,
+				3012226F2FBC2ABE0071B4BB /* DailyMissionCell.swift */,
+				301222702FBC2ABE0071B4BB /* DifficultyChipPicker.swift */,
+				301222712FBC2ABE0071B4BB /* LevelGridCell.swift */,
+				301222722FBC2ABE0071B4BB /* PilotRankProgressCell.swift */,
+				301222732FBC2ABE0071B4BB /* SettingsCells.swift */,
+				301222742FBC2ABE0071B4BB /* ShipSkinOptionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		301222832FBC2ABE0071B4BB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				301222762FBC2ABE0071B4BB /* AppBackgroundView.swift */,
+				301222772FBC2ABE0071B4BB /* AppButton.swift */,
+				301222782FBC2ABE0071B4BB /* AppCellStyle.swift */,
+				301222792FBC2ABE0071B4BB /* AppDesignSystem.swift */,
+				3012227A2FBC2ABE0071B4BB /* GameChromeOverlay.swift */,
+				3012227B2FBC2ABE0071B4BB /* GameFinishButton.swift */,
+				3012227C2FBC2ABE0071B4BB /* GameHUDOverlay.swift */,
+				3012227D2FBC2ABE0071B4BB /* GameResultOverlay.swift */,
+				3012227E2FBC2ABE0071B4BB /* LaserBoltView.swift */,
+				3012227F2FBC2ABE0071B4BB /* ScreenHeaderView.swift */,
+				301222802FBC2ABE0071B4BB /* SpaceshipShape.swift */,
+				301222812FBC2ABE0071B4BB /* StarRatingView.swift */,
+				301222822FBC2ABE0071B4BB /* View+TransparentScreen.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		301222842FBC2ABE0071B4BB /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				301222752FBC2ABE0071B4BB /* Cells */,
+				301222832FBC2ABE0071B4BB /* Components */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		301222862FBC2ABE0071B4BB /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				301222852FBC2ABE0071B4BB /* AchievementsView.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
+		301222892FBC2ABE0071B4BB /* AsteroidEvasion */ = {
+			isa = PBXGroup;
+			children = (
+				301222872FBC2ABE0071B4BB /* AsteroidEvasionView.swift */,
+				301222882FBC2ABE0071B4BB /* AsteroidEvasionViewModel.swift */,
+			);
+			path = AsteroidEvasion;
+			sourceTree = "<group>";
+		};
+		3012228C2FBC2ABE0071B4BB /* MeteorGlide */ = {
+			isa = PBXGroup;
+			children = (
+				3012228A2FBC2ABE0071B4BB /* MeteorGlideView.swift */,
+				3012228B2FBC2ABE0071B4BB /* MeteorGlideViewModel.swift */,
+			);
+			path = MeteorGlide;
+			sourceTree = "<group>";
+		};
+		3012228F2FBC2ABE0071B4BB /* MeteorTap */ = {
+			isa = PBXGroup;
+			children = (
+				3012228D2FBC2ABE0071B4BB /* MeteorTapView.swift */,
+				3012228E2FBC2ABE0071B4BB /* MeteorTapViewModel.swift */,
+			);
+			path = MeteorTap;
+			sourceTree = "<group>";
+		};
+		301222902FBC2ABE0071B4BB /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				301222892FBC2ABE0071B4BB /* AsteroidEvasion */,
+				3012228C2FBC2ABE0071B4BB /* MeteorGlide */,
+				3012228F2FBC2ABE0071B4BB /* MeteorTap */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		301222932FBC2ABE0071B4BB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				301222912FBC2ABE0071B4BB /* HomeView.swift */,
+				301222922FBC2ABE0071B4BB /* HomeWidgets.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		301222952FBC2ABE0071B4BB /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				301222942FBC2ABE0071B4BB /* LevelSelectionView.swift */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		301222972FBC2ABE0071B4BB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				301222962FBC2ABE0071B4BB /* MainTabView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		301222992FBC2ABE0071B4BB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				301222982FBC2ABE0071B4BB /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3012229A2FBC2ABE0071B4BB /* Play */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		3012229F2FBC2ABE0071B4BB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3012229B2FBC2ABE0071B4BB /* PolicyMarkdownText.swift */,
+				3012229C2FBC2ABE0071B4BB /* PrivacyPolicyView.swift */,
+				3012229D2FBC2ABE0071B4BB /* SettingsView.swift */,
+				3012229E2FBC2ABE0071B4BB /* ShipSkinPickerView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		301222A02FBC2ABE0071B4BB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				301222862FBC2ABE0071B4BB /* Achievements */,
+				301222902FBC2ABE0071B4BB /* Games */,
+				301222932FBC2ABE0071B4BB /* Home */,
+				301222952FBC2ABE0071B4BB /* Levels */,
+				301222972FBC2ABE0071B4BB /* Main */,
+				301222992FBC2ABE0071B4BB /* Onboarding */,
+				3012229A2FBC2ABE0071B4BB /* Play */,
+				3012229F2FBC2ABE0071B4BB /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		301222A22FBC2ABE0071B4BB /* ShipArt */ = {
+			isa = PBXGroup;
+			children = (
+				301222A12FBC2ABE0071B4BB /* spaceship_skins_sheet.png */,
+			);
+			path = ShipArt;
+			sourceTree = "<group>";
+		};
+		301222A42FBC2ABE0071B4BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				301222A22FBC2ABE0071B4BB /* ShipArt */,
+				301222A32FBC2ABE0071B4BB /* privacy_policy.md */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		301222AF2FBC2ABE0071B4BB /* 170ElarionPulseHub */ = {
+			isa = PBXGroup;
+			children = (
+				3012226C2FBC2ABE0071B4BB /* Core */,
+				301222842FBC2ABE0071B4BB /* Design */,
+				301222A02FBC2ABE0071B4BB /* Features */,
+				301222A42FBC2ABE0071B4BB /* Resources */,
+				301222A52FBC2ABE0071B4BB /* AppDelegate.swift */,
+				301222A62FBC2ABE0071B4BB /* Assets.xcassets */,
+				301222A72FBC2ABE0071B4BB /* ContentView.swift */,
+				301222A82FBC2ABE0071B4BB /* Info.plist */,
+				301222AA2FBC2ABE0071B4BB /* LaunchScreen.storyboard */,
+				301222AC2FBC2ABE0071B4BB /* Main.storyboard */,
+				301222AD2FBC2ABE0071B4BB /* SceneDelegate.swift */,
+				301222AE2FBC2ABE0071B4BB /* ViewController.swift */,
+			);
+			path = 170ElarionPulseHub;
+			sourceTree = "<group>";
+		};
+		498B742D542A0CC297D0131B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA447C9C1CD510718322820D /* Pods_170ElarionPulseHub.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D3C9D9536AF2B89EDEF9E36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48551B145AC6CAC6E2662082 /* Pods-170ElarionPulseHub.debug.xcconfig */,
+				C14B0018214EF9C6475ED632 /* Pods-170ElarionPulseHub.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,6 +438,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30121F282FBB937E0071B4BB /* Build configuration list for PBXNativeTarget "170ElarionPulseHub" */;
 			buildPhases = (
+				7799C4A69C24C05579F4E723 /* [CP] Check Pods Manifest.lock */,
 				30121F112FBB937D0071B4BB /* Sources */,
 				30121F122FBB937D0071B4BB /* Frameworks */,
 				30121F132FBB937D0071B4BB /* Resources */,
@@ -73,12 +447,7 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				30121F172FBB937D0071B4BB /* 170ElarionPulseHub */,
-			);
 			name = 170ElarionPulseHub;
-			packageProductDependencies = (
-			);
 			productName = 170ElarionPulseHub;
 			productReference = 30121F152FBB937D0071B4BB /* 170ElarionPulseHub.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +468,7 @@
 				};
 			};
 			buildConfigurationList = 30121F102FBB937D0071B4BB /* Build configuration list for PBXProject "170ElarionPulseHub" */;
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -106,8 +476,6 @@
 				Base,
 			);
 			mainGroup = 30121F0C2FBB937D0071B4BB;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 30121F162FBB937D0071B4BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -122,24 +490,133 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				301222B02FBC2ABE0071B4BB /* spaceship_skins_sheet.png in Resources */,
+				301222B12FBC2ABE0071B4BB /* privacy_policy.md in Resources */,
+				301222B22FBC2ABE0071B4BB /* Assets.xcassets in Resources */,
+				301222B42FBC2ABE0071B4BB /* LaunchScreen.storyboard in Resources */,
+				301222B52FBC2ABE0071B4BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7799C4A69C24C05579F4E723 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-170ElarionPulseHub-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		30121F112FBB937D0071B4BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				301222B62FBC2ABE0071B4BB /* Color+App.swift in Sources */,
+				301222B72FBC2ABE0071B4BB /* GameProgressStore+Home.swift in Sources */,
+				301222B82FBC2ABE0071B4BB /* Notification+Progress.swift in Sources */,
+				301222B92FBC2ABE0071B4BB /* AchievementDefinition.swift in Sources */,
+				301222BA2FBC2ABE0071B4BB /* AchievementDefinition+Progress.swift in Sources */,
+				301222BB2FBC2ABE0071B4BB /* ActivityItem.swift in Sources */,
+				301222BC2FBC2ABE0071B4BB /* AppExternalLink.swift in Sources */,
+				301222BD2FBC2ABE0071B4BB /* DailyMission.swift in Sources */,
+				301222BE2FBC2ABE0071B4BB /* DailyMissionLaunch.swift in Sources */,
+				301222BF2FBC2ABE0071B4BB /* Difficulty.swift in Sources */,
+				301222C02FBC2ABE0071B4BB /* Difficulty+Hints.swift in Sources */,
+				301222C12FBC2ABE0071B4BB /* LevelBestRecord.swift in Sources */,
+				301222C22FBC2ABE0071B4BB /* PilotRank.swift in Sources */,
+				301222C32FBC2ABE0071B4BB /* ShipSkin.swift in Sources */,
+				301222C42FBC2ABE0071B4BB /* GameEffectsState.swift in Sources */,
+				301222C52FBC2ABE0071B4BB /* HapticService.swift in Sources */,
+				301222C62FBC2ABE0071B4BB /* SoundService.swift in Sources */,
+				301222C72FBC2ABE0071B4BB /* AppStorage.swift in Sources */,
+				301222C82FBC2ABE0071B4BB /* AchievementBadgeCell.swift in Sources */,
+				301222C92FBC2ABE0071B4BB /* ActivityMissionCell.swift in Sources */,
+				301222CA2FBC2ABE0071B4BB /* DailyMissionCell.swift in Sources */,
+				301222CB2FBC2ABE0071B4BB /* DifficultyChipPicker.swift in Sources */,
+				301222CC2FBC2ABE0071B4BB /* LevelGridCell.swift in Sources */,
+				301222CD2FBC2ABE0071B4BB /* PilotRankProgressCell.swift in Sources */,
+				301222CE2FBC2ABE0071B4BB /* SettingsCells.swift in Sources */,
+				301222CF2FBC2ABE0071B4BB /* ShipSkinOptionCell.swift in Sources */,
+				301222D02FBC2ABE0071B4BB /* AppBackgroundView.swift in Sources */,
+				301222D12FBC2ABE0071B4BB /* AppButton.swift in Sources */,
+				301222D22FBC2ABE0071B4BB /* AppCellStyle.swift in Sources */,
+				301222D32FBC2ABE0071B4BB /* AppDesignSystem.swift in Sources */,
+				301222D42FBC2ABE0071B4BB /* GameChromeOverlay.swift in Sources */,
+				301222D52FBC2ABE0071B4BB /* GameFinishButton.swift in Sources */,
+				301222D62FBC2ABE0071B4BB /* GameHUDOverlay.swift in Sources */,
+				301222D72FBC2ABE0071B4BB /* GameResultOverlay.swift in Sources */,
+				301222D82FBC2ABE0071B4BB /* LaserBoltView.swift in Sources */,
+				301222D92FBC2ABE0071B4BB /* ScreenHeaderView.swift in Sources */,
+				301222DA2FBC2ABE0071B4BB /* SpaceshipShape.swift in Sources */,
+				301222DB2FBC2ABE0071B4BB /* StarRatingView.swift in Sources */,
+				301222DC2FBC2ABE0071B4BB /* View+TransparentScreen.swift in Sources */,
+				301222DD2FBC2ABE0071B4BB /* AchievementsView.swift in Sources */,
+				301222DE2FBC2ABE0071B4BB /* AsteroidEvasionView.swift in Sources */,
+				301222DF2FBC2ABE0071B4BB /* AsteroidEvasionViewModel.swift in Sources */,
+				301222E02FBC2ABE0071B4BB /* MeteorGlideView.swift in Sources */,
+				301222E12FBC2ABE0071B4BB /* MeteorGlideViewModel.swift in Sources */,
+				301222E22FBC2ABE0071B4BB /* MeteorTapView.swift in Sources */,
+				301222E32FBC2ABE0071B4BB /* MeteorTapViewModel.swift in Sources */,
+				301222E42FBC2ABE0071B4BB /* HomeView.swift in Sources */,
+				301222E52FBC2ABE0071B4BB /* HomeWidgets.swift in Sources */,
+				301222E62FBC2ABE0071B4BB /* LevelSelectionView.swift in Sources */,
+				301222E72FBC2ABE0071B4BB /* MainTabView.swift in Sources */,
+				301222E82FBC2ABE0071B4BB /* OnboardingView.swift in Sources */,
+				301222E92FBC2ABE0071B4BB /* PolicyMarkdownText.swift in Sources */,
+				301222EA2FBC2ABE0071B4BB /* PrivacyPolicyView.swift in Sources */,
+				301222EB2FBC2ABE0071B4BB /* SettingsView.swift in Sources */,
+				301222EC2FBC2ABE0071B4BB /* ShipSkinPickerView.swift in Sources */,
+				301222ED2FBC2ABE0071B4BB /* AppDelegate.swift in Sources */,
+				301222EE2FBC2ABE0071B4BB /* ContentView.swift in Sources */,
+				301222EF2FBC2ABE0071B4BB /* SceneDelegate.swift in Sources */,
+				301222F02FBC2ABE0071B4BB /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		301222AA2FBC2ABE0071B4BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				301222A92FBC2ABE0071B4BB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		301222AC2FBC2ABE0071B4BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				301222AB2FBC2ABE0071B4BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		30121F292FBB937E0071B4BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48551B145AC6CAC6E2662082 /* Pods-170ElarionPulseHub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -147,30 +624,41 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = 170ElarionPulseHub/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Elarion Pulse Hub";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "home.-70ElarionPulseHub";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ber.3l6r10np7ls4h8b;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		30121F2A2FBB937E0071B4BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C14B0018214EF9C6475ED632 /* Pods-170ElarionPulseHub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -178,25 +666,35 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = 170ElarionPulseHub/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Elarion Pulse Hub";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "home.-70ElarionPulseHub";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ber.3l6r10np7ls4h8b;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -204,7 +702,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -267,7 +765,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
