@@ -3,8 +3,8 @@
 //  1TrulbargrovarStrinel
 //
 //  Показывает загрузку в стиле приложения (градиент + анимированный индикатор), запрашивает конфиг,
-//  затем переходит на ContentView или WebviewVC. Адаптируется под портрет и ландшафт.
-//  Максимальное время загрузки — 15 секунд.
+//  затем переходит на ContentView или WebviewVC.
+//  Гарантированный дедлайн: не более 15 с на экране со спиннером.
 //
 
 import UIKit
@@ -14,22 +14,27 @@ import SwiftUI
 private let conversionDataWaitInterval: TimeInterval = 10
 /// Окно свежести conversion-данных для fast-path при старте.
 private let conversionDataFreshnessWindow: TimeInterval = 10
-/// Максимальное время загрузки (сек): при нормальном интернете не должно превышать 15.
-private let maxLoadingTimeInterval: TimeInterval = 15
+/// Гарантированное максимальное время показа спиннера с момента появления экрана.
+private let hardLoadingDeadlineInterval: TimeInterval = 15
 
 /// Задержка перед стартом обычного config-flow (когда нет pending push URL).
 private let ordinaryStartDelayInterval: TimeInterval = 5
+
+private enum LoadingUIState {
+    case spinner
+    case noInternet
+}
 
 final class LoadingViewController: UIViewController {
 
     private let loadingHosting = UIHostingController(rootView: AnyView(LoadingView()))
     private var didFinishTransition = false
-    private var timeoutWorkItem: DispatchWorkItem?
+    private var loadingUIState: LoadingUIState = .spinner
+    private var hardDeadlineWorkItem: DispatchWorkItem?
     private var conversionWaitWorkItem: DispatchWorkItem?
     private var conversionObserver: NSObjectProtocol?
     private var didStartConfigRequest = false
     private var ordinaryStartWorkItem: DispatchWorkItem?
-    /// Флаг: config-flow уже запущен (или запланирован) — повторно не стартуем.
     private var isConfigFlowInProgress = false
 
     override func viewDidLoad() {
@@ -48,24 +53,50 @@ final class LoadingViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        scheduleHardDeadline()
         startConfigFlow()
     }
+
+    // MARK: - Hard deadline (always leaves spinner)
+
+    private func scheduleHardDeadline() {
+        hardDeadlineWorkItem?.cancel()
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.forceFinishLoading()
+        }
+        hardDeadlineWorkItem = workItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + hardLoadingDeadlineInterval, execute: workItem)
+    }
+
+    private func cancelHardDeadline() {
+        hardDeadlineWorkItem?.cancel()
+        hardDeadlineWorkItem = nil
+    }
+
+    /// Принудительно завершает загрузку, если спиннер всё ещё на экране (не трогает No Internet).
+    private func forceFinishLoading() {
+        guard !didFinishTransition else { return }
+        guard loadingUIState == .spinner else { return }
+        cancelPendingConfigWork()
+        cancelHardDeadline()
+        isConfigFlowInProgress = false
+        transitionToContentViewOrSavedWebView()
+    }
+
+    // MARK: - Config flow
 
     private func startConfigFlow() {
         if didFinishTransition { return }
         if let pushURL = PushNotificationURLRouter.shared.consumePendingURL() {
-            // Push-ветка: отменяем отложенный обычный старт, открываем WebView сразу (без HEAD-проверки —
-            // редиректы и ATS обрабатывает WKWebView так же, как в других приложениях).
             ordinaryStartWorkItem?.cancel()
             ordinaryStartWorkItem = nil
             isConfigFlowInProgress = true
-            didFinishTransition = true
-            replaceRoot(with: WebviewVC(url: pushURL))
+            finishTransition {
+                WebviewVC(url: pushURL)
+            }
             return
         }
 
-        // Обычный старт: запускаем config-flow не сразу, а после задержки.
-        // Это стабилизирует поведение на TestFlight, когда приложение уходит в background/foreground.
         guard !isConfigFlowInProgress, ordinaryStartWorkItem == nil else { return }
         isConfigFlowInProgress = true
         showLoadingState()
@@ -100,15 +131,7 @@ final class LoadingViewController: UIViewController {
         let config = ConfigManager.shared
         didStartConfigRequest = false
 
-        // Таймаут: по истечении принудительно завершаем загрузку
-        timeoutWorkItem = DispatchWorkItem { [weak self] in
-            self?.finishByTimeout()
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + maxLoadingTimeInterval, execute: timeoutWorkItem!)
-
-        // Есть действительная сохранённая ссылка — сразу показываем WebView
         if config.isSavedURLValid, let url = config.savedURL {
-            cancelTimeout()
             transitionToWebView(url: url)
             return
         }
@@ -117,24 +140,27 @@ final class LoadingViewController: UIViewController {
     }
 
     private func showLoadingState() {
+        loadingUIState = .spinner
         loadingHosting.rootView = AnyView(LoadingView())
     }
 
     private func showNoInternetState() {
+        loadingUIState = .noInternet
         isConfigFlowInProgress = false
-        cancelTimeout()
+        cancelPendingConfigWork()
         loadingHosting.rootView = AnyView(
             NoInternetView(
                 onRetry: { [weak self] in
-                    self?.startConfigFlow()
+                    guard let self else { return }
+                    self.isConfigFlowInProgress = false
+                    self.loadingUIState = .spinner
+                    self.startConfigFlow()
                 }
             )
         )
     }
 
-    private func cancelTimeout() {
-        timeoutWorkItem?.cancel()
-        timeoutWorkItem = nil
+    private func cancelPendingConfigWork() {
         ordinaryStartWorkItem?.cancel()
         ordinaryStartWorkItem = nil
         conversionWaitWorkItem?.cancel()
@@ -145,33 +171,13 @@ final class LoadingViewController: UIViewController {
         }
     }
 
-    private func finishByTimeout() {
-        guard !didFinishTransition else { return }
-        // If the config request already started, don't override the UI decision by timeout.
-        // The request itself has its own timeout interval.
-        if didStartConfigRequest { return }
-        cancelTimeout()
-        isConfigFlowInProgress = false
-        transitionToContentViewOrSavedWebView()
-    }
-
     private func performConfigRequest() {
         guard !didFinishTransition, !didStartConfigRequest else { return }
         didStartConfigRequest = true
-        // From this point the in-flight request timeout controls the flow.
-        // Prevent the global loading timeout from forcing ContentView while we are awaiting the response.
-        timeoutWorkItem?.cancel()
-        timeoutWorkItem = nil
-        conversionWaitWorkItem?.cancel()
-        conversionWaitWorkItem = nil
-        if let observer = conversionObserver {
-            NotificationCenter.default.removeObserver(observer)
-            conversionObserver = nil
-        }
+        cancelPendingConfigWork()
 
         ConfigManager.shared.requestConfig { [weak self] result in
             guard let self = self, !self.didFinishTransition else { return }
-            self.cancelTimeout()
             switch result {
             case .success(let response):
                 if response.ok, let urlString = response.url, let url = URL(string: urlString) {
@@ -186,15 +192,11 @@ final class LoadingViewController: UIViewController {
     }
 
     private func waitForConversionDataThenRequestConfig() {
-        // Fast-path только для свежих conversion-данных,
-        // чтобы не использовать устаревшее значение из прошлых запусков.
         if AppsFlyerManager.shared.hasFreshConversionData(within: conversionDataFreshnessWindow) {
             performConfigRequest()
             return
         }
 
-        // Subscribe first, then re-check to avoid a race where AppsFlyer posts the notification
-        // between the initial nil check and observer registration.
         conversionObserver = NotificationCenter.default.addObserver(
             forName: .appsFlyerConversionDataReady,
             object: nil,
@@ -203,25 +205,20 @@ final class LoadingViewController: UIViewController {
             self?.performConfigRequest()
         }
 
-        // Stage 2: if conversion data didn't arrive in time, proceed with config request
-        // without conversion payload (so we don't block UX with ContentView fallback).
         conversionWaitWorkItem = DispatchWorkItem { [weak self] in
             guard let self else { return }
             guard !self.didFinishTransition, !self.didStartConfigRequest else { return }
-            if AppsFlyerManager.shared.conversionDataString == nil {
-                self.performConfigRequest()
-            }
+            self.performConfigRequest()
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + conversionDataWaitInterval, execute: conversionWaitWorkItem!)
 
-        // Close the race window: if data became available right before/while subscribing,
-        // trigger the request immediately.
         if AppsFlyerManager.shared.hasFreshConversionData(within: conversionDataFreshnessWindow) {
             performConfigRequest()
         }
     }
 
-    /// При ошибке: если есть сохранённая ссылка — WebView с ней, иначе — ContentView.
+    // MARK: - Transitions
+
     private func transitionToContentViewOrSavedWebView() {
         if let url = ConfigManager.shared.savedURL {
             transitionToWebView(url: url)
@@ -233,24 +230,45 @@ final class LoadingViewController: UIViewController {
     private func transitionToWebView(url: URL) {
         NotificationPermissionManager.shared.shouldShowCustomNotificationScreen { [weak self] shouldShow in
             guard let self = self, !self.didFinishTransition else { return }
-            self.didFinishTransition = true
             if shouldShow {
-                let notificationVC = NotificationPermissionViewController(url: url, window: self.view.window)
-                self.replaceRoot(with: notificationVC)
+                let notificationVC = NotificationPermissionViewController(
+                    url: url,
+                    window: self.resolvedWindow
+                )
+                self.finishTransition { notificationVC }
             } else {
-                self.replaceRoot(with: WebviewVC(url: url))
+                self.finishTransition { WebviewVC(url: url) }
             }
         }
     }
 
     private func transitionToContentView() {
+        finishTransition {
+            UIHostingController(rootView: ContentView())
+        }
+    }
+
+    private func finishTransition(makeViewController: () -> UIViewController) {
+        guard !didFinishTransition else { return }
         didFinishTransition = true
-        let content = UIHostingController(rootView: ContentView())
-        replaceRoot(with: content)
+        cancelHardDeadline()
+        cancelPendingConfigWork()
+        replaceRoot(with: makeViewController())
+    }
+
+    private var resolvedWindow: UIWindow? {
+        if let window = view.window {
+            return window
+        }
+        let scene = UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first { $0.activationState == .foregroundActive || $0.activationState == .foregroundInactive }
+            ?? UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first
+        return scene?.windows.first(where: { $0.isKeyWindow }) ?? scene?.windows.first
     }
 
     private func replaceRoot(with vc: UIViewController) {
-        guard let window = view.window else { return }
+        guard let window = resolvedWindow else { return }
         window.rootViewController = vc
     }
 }
