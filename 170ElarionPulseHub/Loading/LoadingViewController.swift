@@ -19,6 +19,8 @@ private let hardLoadingDeadlineInterval: TimeInterval = 15
 
 /// Задержка перед стартом обычного config-flow (когда нет pending push URL).
 private let ordinaryStartDelayInterval: TimeInterval = 5
+private let rootTransitionRetryInterval: TimeInterval = 0.1
+private let maxRootTransitionRetryCount: Int = 20
 
 private enum LoadingUIState {
     case spinner
@@ -250,10 +252,31 @@ final class LoadingViewController: UIViewController {
 
     private func finishTransition(makeViewController: () -> UIViewController) {
         guard !didFinishTransition else { return }
-        didFinishTransition = true
-        cancelHardDeadline()
-        cancelPendingConfigWork()
-        replaceRoot(with: makeViewController())
+        let targetViewController = makeViewController()
+        completeTransition(to: targetViewController, retryCount: 0)
+    }
+
+    private func completeTransition(to vc: UIViewController, retryCount: Int) {
+        guard !didFinishTransition else { return }
+        if replaceRoot(with: vc) {
+            didFinishTransition = true
+            cancelHardDeadline()
+            cancelPendingConfigWork()
+            return
+        }
+
+        guard retryCount < maxRootTransitionRetryCount else {
+            didFinishTransition = true
+            cancelHardDeadline()
+            cancelPendingConfigWork()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false)
+            return
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + rootTransitionRetryInterval) { [weak self] in
+            self?.completeTransition(to: vc, retryCount: retryCount + 1)
+        }
     }
 
     private var resolvedWindow: UIWindow? {
@@ -267,8 +290,10 @@ final class LoadingViewController: UIViewController {
         return scene?.windows.first(where: { $0.isKeyWindow }) ?? scene?.windows.first
     }
 
-    private func replaceRoot(with vc: UIViewController) {
-        guard let window = resolvedWindow else { return }
+    private func replaceRoot(with vc: UIViewController) -> Bool {
+        guard let window = resolvedWindow else { return false }
         window.rootViewController = vc
+        window.makeKeyAndVisible()
+        return true
     }
 }

@@ -14,6 +14,7 @@ final class NotificationPermissionViewController: UIViewController {
 
     private let url: URL
     private weak var window: UIWindow?
+    private var didFinishTransition = false
 
     init(url: URL, window: UIWindow?) {
         self.url = url
@@ -81,7 +82,44 @@ final class NotificationPermissionViewController: UIViewController {
     }
 
     private func showWebView() {
+        guard !didFinishTransition else { return }
         let webVC = WebviewVC(url: url)
-        window?.rootViewController = webVC
+        if setRootViewController(webVC) {
+            didFinishTransition = true
+            return
+        }
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self, !self.didFinishTransition else { return }
+            let delayedWebVC = WebviewVC(url: self.url)
+            if self.setRootViewController(delayedWebVC) {
+                self.didFinishTransition = true
+                return
+            }
+            self.didFinishTransition = true
+            delayedWebVC.modalPresentationStyle = .fullScreen
+            self.present(delayedWebVC, animated: false)
+        }
+    }
+
+    private func setRootViewController(_ vc: UIViewController) -> Bool {
+        guard let resolvedWindow else { return false }
+        resolvedWindow.rootViewController = vc
+        resolvedWindow.makeKeyAndVisible()
+        return true
+    }
+
+    private var resolvedWindow: UIWindow? {
+        if let window {
+            return window
+        }
+        if let viewWindow = view.window {
+            return viewWindow
+        }
+        let scene = UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first { $0.activationState == .foregroundActive || $0.activationState == .foregroundInactive }
+            ?? UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first
+        return scene?.windows.first(where: { $0.isKeyWindow }) ?? scene?.windows.first
     }
 }
