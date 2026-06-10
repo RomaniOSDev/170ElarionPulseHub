@@ -30,7 +30,6 @@
 		301222B12FBC2ABE0071B4BB /* privacy_policy.md in Resources */ = {isa = PBXBuildFile; fileRef = 301222A32FBC2ABE0071B4BB /* privacy_policy.md */; };
 		301222B22FBC2ABE0071B4BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301222A62FBC2ABE0071B4BB /* Assets.xcassets */; };
 		301222B42FBC2ABE0071B4BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301222AA2FBC2ABE0071B4BB /* LaunchScreen.storyboard */; };
-		301222B52FBC2ABE0071B4BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301222AC2FBC2ABE0071B4BB /* Main.storyboard */; };
 		301222B62FBC2ABE0071B4BB /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222572FBC2ABE0071B4BB /* Color+App.swift */; };
 		301222B72FBC2ABE0071B4BB /* GameProgressStore+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222582FBC2ABE0071B4BB /* GameProgressStore+Home.swift */; };
 		301222B82FBC2ABE0071B4BB /* Notification+Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222592FBC2ABE0071B4BB /* Notification+Progress.swift */; };
@@ -89,7 +88,6 @@
 		301222ED2FBC2ABE0071B4BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222A52FBC2ABE0071B4BB /* AppDelegate.swift */; };
 		301222EE2FBC2ABE0071B4BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222A72FBC2ABE0071B4BB /* ContentView.swift */; };
 		301222EF2FBC2ABE0071B4BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222AD2FBC2ABE0071B4BB /* SceneDelegate.swift */; };
-		301222F02FBC2ABE0071B4BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301222AE2FBC2ABE0071B4BB /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,9 +196,7 @@
 		301222A72FBC2ABE0071B4BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		301222A82FBC2ABE0071B4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301222A92FBC2ABE0071B4BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		301222AB2FBC2ABE0071B4BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		301222AD2FBC2ABE0071B4BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		301222AE2FBC2ABE0071B4BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		48551B145AC6CAC6E2662082 /* Pods-170ElarionPulseHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-170ElarionPulseHub.debug.xcconfig"; path = "Target Support Files/Pods-170ElarionPulseHub/Pods-170ElarionPulseHub.debug.xcconfig"; sourceTree = "<group>"; };
 		AA447C9C1CD510718322820D /* Pods_170ElarionPulseHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_170ElarionPulseHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14B0018214EF9C6475ED632 /* Pods-170ElarionPulseHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-170ElarionPulseHub.release.xcconfig"; path = "Target Support Files/Pods-170ElarionPulseHub/Pods-170ElarionPulseHub.release.xcconfig"; sourceTree = "<group>"; };
@@ -510,9 +506,7 @@
 				301222A72FBC2ABE0071B4BB /* ContentView.swift */,
 				301222A82FBC2ABE0071B4BB /* Info.plist */,
 				301222AA2FBC2ABE0071B4BB /* LaunchScreen.storyboard */,
-				301222AC2FBC2ABE0071B4BB /* Main.storyboard */,
 				301222AD2FBC2ABE0071B4BB /* SceneDelegate.swift */,
-				301222AE2FBC2ABE0071B4BB /* ViewController.swift */,
 				300306EF2FC0CA590058EE20 /* Loading */,
 				300307052FC0CBCF0058EE20 /* GoogleService-Info.plist */,
 			);
@@ -636,7 +630,6 @@
 				301222B12FBC2ABE0071B4BB /* privacy_policy.md in Resources */,
 				301222B22FBC2ABE0071B4BB /* Assets.xcassets in Resources */,
 				301222B42FBC2ABE0071B4BB /* LaunchScreen.storyboard in Resources */,
-				301222B52FBC2ABE0071B4BB /* Main.storyboard in Resources */,
 				300307062FC0CBCF0058EE20 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,7 +745,6 @@
 				301222ED2FBC2ABE0071B4BB /* AppDelegate.swift in Sources */,
 				301222EE2FBC2ABE0071B4BB /* ContentView.swift in Sources */,
 				301222EF2FBC2ABE0071B4BB /* SceneDelegate.swift in Sources */,
-				301222F02FBC2ABE0071B4BB /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,14 +767,6 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		301222AC2FBC2ABE0071B4BB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				301222AB2FBC2ABE0071B4BB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -791,7 +775,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationServiceExtension;
@@ -824,7 +808,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationServiceExtension;
@@ -868,7 +852,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
@@ -911,7 +894,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
