@@ -6,9 +6,7 @@
 //
 
 import UIKit
-import UIKit
 import SwiftUI
-import AppTrackingTransparency
 import AppsFlyerLib
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -42,19 +40,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        requestTrackingAuthorizationIfNeeded()
+        (UIApplication.shared.delegate as? AppDelegate)?.requestTrackingAuthorizationIfNeeded()
         routePendingPushURLIfNeeded(in: scene)
-    }
-
-    /// Запрос на отслеживание данных (ATT) для сбора IDFA, требуется для AppsFlyer.
-    /// Показывается один раз, когда статус ещё не определён (.notDetermined).
-    private func requestTrackingAuthorizationIfNeeded() {
-        guard ATTrackingManager.trackingAuthorizationStatus == .notDetermined else { return }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            ATTrackingManager.requestTrackingAuthorization { _ in
-                // Результат учтён системой; AppsFlyer получит IDFA при разрешении.
-            }
-        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

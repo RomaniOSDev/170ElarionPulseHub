@@ -10,9 +10,12 @@ import AppsFlyerLib
 import FirebaseCore
 import FirebaseMessaging
 import UserNotifications
+import AppTrackingTransparency
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
+    private var didStartAppsFlyer = false
+    private var isRequestingTrackingAuthorization = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureAppsFlyer()
@@ -27,14 +30,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         AppsFlyerLib.shared().appleAppID = "6767486463"
         AppsFlyerLib.shared().delegate = self
         AppsFlyerLib.shared().deepLinkDelegate = self
-        AppsFlyerLib.shared().start()
-        
-        
+
+
         //FireBase
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         if let app = FirebaseApp.app() {
             ConfigManagerOptionalData.firebaseProjectId = app.options.gcmSenderID
+        }
+    }
+
+    /// Starts AppsFlyer only once after ATT status is resolved (or previously determined).
+    func startAppsFlyerIfNeeded() {
+        guard !didStartAppsFlyer else { return }
+        didStartAppsFlyer = true
+        AppsFlyerLib.shared().start()
+    }
+
+    /// Requests ATT as soon as app becomes active, then starts AppsFlyer.
+    func requestTrackingAuthorizationIfNeeded() {
+        let status = ATTrackingManager.trackingAuthorizationStatus
+        guard status == .notDetermined else {
+            startAppsFlyerIfNeeded()
+            return
+        }
+        guard !isRequestingTrackingAuthorization else { return }
+        isRequestingTrackingAuthorization = true
+
+        // Run on next moment after activation to ensure the prompt can be presented.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { [weak self] in
+            ATTrackingManager.requestTrackingAuthorization { _ in
+                DispatchQueue.main.async {
+                    guard let self else { return }
+                    self.isRequestingTrackingAuthorization = false
+                    self.startAppsFlyerIfNeeded()
+                }
+            }
         }
     }
 
